@@ -31,4 +31,6 @@ positively edge triggered, this causes the next TFF, which is pulsed by the outp
 of the first TFF, to switch its state. This then happens to the third TFF in the same way.
 
 ### 3 - What width of ring counter would you use to get to an output of ~1KHz?
-Width of 17 TFF's, 
+Width of 17 TFF's, given an input of 100 Mhz. This is given by the equation log_2(100MHz/1KHz) = 16.61, 
+which rounds up to 17. We cannot get exactly 1Khz output with ring counters, because we can only divide
+by powers of 2, while 1K and 100M are related by powers of 10.
